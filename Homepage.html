@@ -1,39 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> P.I.E Language Tree</title>
 <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
-<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+body {
+  font-family: "Times new roman", serif;
+  background-color: #224f64
 }
 
-a:hover, a:active {
-  background-color: #964B00;
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.1s;
+}
+
+.sidebar a:hover {
+  color: #133646;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #133646;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #899ba3;
+  color: #133646;
+}
+
+#main {
+  transition: margin-left 1s;
+  padding: 16px;
+  text-align: center;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+h2 {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 </style>
 </head>
-<body style="background-color:black">
-<h1 style="color:white; text-align:center;">Homepage</h1>
-  <h3 style="color:white; text-align:center;">Q2 Project Proposal - By Kyle and Karl Gojar</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indo-European_languages_map.png" style="display: block; margin: 0 auto; width: 1024px; height: 710px;">
-<h2 style="color:white; text-align:center;"><b> Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. The following webpages feature the 8 major subdivisions of P.I.E. In addition, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</b></h2>
-<div>
-<p><b>OUTLINE:</b></p>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="#">Homepage</a>
+  <a href="#">Main Braches</a>
+  <a href="#">History</a>
+  <a href="#">Core Vocab</a>
+  <a href="#">Implementation of JS</a>
+  <a href="#">Sign-up</a>
+  <a href="#">Comment Here!</a>
 </div>
-<a href="Main Branches - P.I.E Language Tree.html" target="_blank">Main Branches</a>
+
 <div>
-<a href="History.html" target="_blank">History</a>
+  <button class="openbtn" onclick="openNav()">See More</button>
 </div>
-<a href="Core Vocab.html" target="_blank">Core Vocab (Kinship, Numerals, Body Parts)</a>
-<div>
-<a href="default.asp" target="_blank">Implementation of JS</a>
+<div id="main">
+  <h1>Homepage</h1>
+  <h2>Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. This features the 8 major groups, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indo-European_languages_map.png" 
+  style="display: block; margin: 0 auto; width: 1024px; height: 710px; text-align: center;">
+  <h2>... Wait, what IS P.I.E?</h2>
+  <h2>Description: P.I.E is defined as the common ancestor of the Indo-European Languages. It's so geographically spread out, extending between most of Europe and nearly half of Asia. For more info, navigate through the sidebar!</h2>
 </div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
 </body>
 </html>
